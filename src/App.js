@@ -5,7 +5,7 @@ import Banner from './componentes/Banner/Banner';
 function App() {
   return (
     <div className="App">
-      <Banner />
+      <Banner/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
