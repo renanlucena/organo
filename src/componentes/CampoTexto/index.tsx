@@ -9,17 +9,17 @@ interface CampoTextoProps{
 
 }
 
-const CampoTexto = (props: CampoTextoProps) =>{
-    const campo = props.label;
-    const placeholder = props.placeholder;
+const CampoTexto = ({aoAlterado, label, placeholder, valor}: CampoTextoProps) =>{
+    const campo = label;
+    const placeholderAlterada = `${placeholder}...`;
 
     const aoDigitar = (e: React.ChangeEvent<HTMLInputElement>) => {
-        props.aoAlterado(e.target.value);
+        aoAlterado(e.target.value);
     }
     return(
         <div className="campo-texto">
             <label>{campo}</label>
-            <input value={props.valor} onChange={aoDigitar} required placeholder={placeholder}/>
+            <input value={valor} onChange={aoDigitar} required placeholder={placeholderAlterada}/>
         </div>
     )
 
