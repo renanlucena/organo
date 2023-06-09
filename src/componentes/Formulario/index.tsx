@@ -3,8 +3,16 @@ import Botao from '../Botao';
 import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import './Formulario.css'
+import { IColaborador } from '../../compartilhado/interfaces/IColaborador';
 
-const Formulario = (props) => {
+interface FormularioProps{
+    aoColaboradorCadastrado: (colaborador: IColaborador) => void
+    times: string[]
+
+
+}
+
+const Formulario = (props: FormularioProps) => {
     
 
     const [nome, setNome] = useState('');
@@ -14,7 +22,7 @@ const Formulario = (props) => {
    
 
 
-    const aoSalvar = (e) =>{
+    const aoSalvar = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
         props.aoColaboradorCadastrado({
             nome,
@@ -57,7 +65,9 @@ const Formulario = (props) => {
                     aoAlterado = {valor => setTime(valor)}
                     />
                 <Botao>
+                    
                     Criar Card
+                    
                 </Botao>
             </form>
         </section>
