@@ -6,12 +6,12 @@ interface CampoTextoProps{
     placeholder: string
     label: string
     valor: string
-
+    tipo?: 'text' | 'password' | 'date' | 'email' | 'number'
 }
 
-const CampoTexto = ({aoAlterado, label, placeholder, valor}: CampoTextoProps) =>{
+const CampoTexto = ({aoAlterado, label, placeholder, valor, tipo ='text'}: CampoTextoProps) =>{
     const campo = label;
-    const placeholderAlterada = `${placeholder}...`;
+    const placeholderAlterada = `${placeholder}`;
 
     const aoDigitar = (e: React.ChangeEvent<HTMLInputElement>) => {
         aoAlterado(e.target.value);
@@ -19,7 +19,7 @@ const CampoTexto = ({aoAlterado, label, placeholder, valor}: CampoTextoProps) =>
     return(
         <div className="campo-texto">
             <label>{campo}</label>
-            <input value={valor} onChange={aoDigitar} required placeholder={placeholderAlterada}/>
+            <input value={valor} onChange={aoDigitar} required placeholder={placeholderAlterada} type={tipo}/>
         </div>
     )
 

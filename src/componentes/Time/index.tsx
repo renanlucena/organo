@@ -7,6 +7,7 @@ interface TimeProps {
     corSecundaria: string
     nome: string
     colaboradores: IColaborador[]
+    
 }
 
 const Time = ({corPrimaria, corSecundaria, nome, colaboradores} :TimeProps) => {
@@ -20,7 +21,10 @@ const Time = ({corPrimaria, corSecundaria, nome, colaboradores} :TimeProps) => {
                         key={colaborador.nome} 
                         nome= {colaborador.nome} 
                         cargo = {colaborador.cargo}
-                        imagem = {colaborador.imagem}/>)}
+                        imagem = {colaborador.imagem}
+                        data = {colaborador.data}
+                        />)}
+                        
              </div>
         </section>
         : <></>
