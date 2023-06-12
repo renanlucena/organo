@@ -23,7 +23,7 @@ const Time = ({corPrimaria, corSecundaria, nome, colaboradores} :TimeProps) => {
                         imagem = {colaborador.imagem}/>)}
              </div>
         </section>
-        : ''
+        : <></>
     )
 }
 
